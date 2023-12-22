@@ -1,0 +1,36 @@
+const CreateURL = (path) =>{
+    return window.location.origin+path
+}
+export const updatedEntry = async (id,content)=>{
+ const res= await fetch(new Request(CreateURL(`/api/journal/${id}`),{
+    method: 'PATCH',
+    body: JSON.stringify({content}),
+     
+ }))   
+ if (res.ok){
+    const data = await res.json()
+    return data.data
+}
+}
+
+ export const createNewEntry = async () =>{
+    const res = await fetch(new Request(CreateURL('/api/journal'),{
+        method: 'POST',
+        })
+    )
+    if (res.ok){
+        const data = await res.json()
+        return data.data
+    }
+
+ }
+
+ export const askQuestion= async (question)=>{
+    const res= await fetch(
+        new Request(CreateURL('/api/question'),{
+            method: 'POST',
+            body: JSON.stringify({ question })
+            
+        })
+    )
+ }
