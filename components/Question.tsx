@@ -27,7 +27,7 @@ const onChange = (e)=>{
             className="border border-black/20 px-4 py-2 text-lg rounded-lg"
             />
             
-            <button type="submit" className="bg-blue-400 px-4 py-2 rounded-b-lg text-lg" disabled={loading}
+            <button type="submit" className="bg-blue-400 px-4 py-2 rounded-lg text-lg ml-1" disabled={loading}
              >Ask</button>
         </form>
         {loading && <div>...Loading</div>}

@@ -13,18 +13,18 @@ const DashboardLayout = ({ children }) => {
     <div className="h-screen w-screen relative">
       <aside className="absolute w-[200px] top-0 left-0 h-full border-r border-black/10">
        
-        <div>Mood</div>
-        <ul>
+        <div className='px-4 py-4 text-center text-xl border-b-[1px] font-bold mb-20 '>Mood</div>
+        <ul className='text-center'>
           {links.map(link=>(
-            <li key={link.href} className='px-2 py-6 text-xl'>
+            <li key={link.href} className='px-2 py-6 text-xl hover:bg-[#d1dde0] font-medium rounded-lg'>
               <Link href={link.href}>{link.label}</Link>
             </li>
-
           ))}
         </ul>
       </aside>
       <div className="ml-[200px] h-full">
         <header className="h-[60px] border-b border-black/10">
+          
           <div className="h-full w-full px-6 flex items-center justify-end">
             <UserButton />
           </div>
